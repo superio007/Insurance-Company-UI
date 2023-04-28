@@ -1,0 +1,61 @@
+<div class="container"> <!--Contact us form started-->
+    <div class="card">
+
+        <div id="name"> <!-- header-->
+            <h1><b><u>Contact US:</u></b></h1>
+          </div>
+
+          <form [formGroup]="contactform" (ngSubmit)="contact()">
+
+            <div id="field"> <!--Name field-->
+                <input class="form-control" [(ngModel)]="contactus.name" name="name" formControlName="name"
+                placeholder="Enter your name">
+                
+                <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['name'].errors && f['name'].errors['required']">Your Name is required.</div>
+                  <div *ngIf="f['name'].errors && f['name'].errors['pattern']">Only alphabets are allowed.</div>
+              </div>
+               </div>
+    
+              <div id="field"> <!--Email field-->
+                <input class="form-control" [(ngModel)]="contactus.email" name="email" formControlName="email"
+              placeholder="Enter your email">
+              
+              <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">Your email is required.</div>
+                <div *ngIf="f['email'].errors && f['email'].errors['email']">Only valid email is required.</div>
+            </div>
+              </div>
+
+              <div id="field"> <!--Inquiry field-->
+                <input class="form-control" [(ngModel)]="contactus.inquiry" name="inquiry" formControlName="inquiry"
+              placeholder="Enter your inquiry">
+              
+              <div *ngIf="f['inquiry'].touched && f['inquiry'].invalid" class="alert alert-danger">
+                <div *ngIf="f['inquiry'].errors && f['inquiry'].errors['required']">Your inquiry is required.</div>
+                <div *ngIf="f['inquiry'].errors && f['inquiry'].errors['pattern']">Only alphabets are allowed.</div>
+            </div>
+              </div>
+
+          </form>
+
+          <button type="submit" [disabled]="contactform.invalid" class="btn btn-outline-dark" (click)="contact()">Submit</button>
+
+
+    </div>
+</div> <!--contact us form ended-->
+
+<div id="info"> <!--Info tag started-->
+  <div class="jumbotron">
+    <div class="card">
+      <h3><b>Contact Us:</b></h3>
+      <p>This site should be used to lodge the online complaint and all other necessary inquiry or clarification 
+        will happen at near police station, you can get your updates from the same police station.</p>
+
+      <p><b>Main Police Station:</b></p>
+      <address><i>Mumbai Police Station(Bandra), <br>
+        Near Main highway road, opposite x-mall, <br>
+        Pincode: 456 123.</i></address>
+    </div>
+  </div>
+</div> <!--Info tag ended-->

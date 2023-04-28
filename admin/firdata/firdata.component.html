@@ -1,0 +1,73 @@
+<div id="header">
+    <h1>FIR Registerations:</h1>
+</div>
+
+<div class="searchbox"> <!--Search row started-->
+  <div class="col-xs-12">
+        <input type="text" class="searh-input" placeholder="Search..." [(ngModel)]="filerString"
+          (keyup)="filterFIR()">
+
+          <div id="button-left">
+            <button class="btn btn-outline-dark"
+          routerLink="/admindashboard" routerLinkActive="active">Go Back</button>
+          </div>
+  </div>
+</div> <!--Search row ended-->
+
+
+<div class="container">
+  <div class="mt-1 mat-elevation-z8">
+    <table mat-table matSort [dataSource]="dataSource" class="table">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+     <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+       <!-- Email Column -->
+       <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+       <!-- Phone Number Column -->
+       <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+
+       <!-- Address Column -->
+       <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      </ng-container>
+
+      <!-- Complaint Column -->
+      <ng-container matColumnDef="complaint">
+        <th mat-header-cell *matHeaderCellDef> Complaint </th>
+        <td mat-cell *matCellDef="let element"> {{element.complaint}} </td>
+      </ng-container>
+
+      <!-- Edit Column -->
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> </th>
+          <td mat-cell *matCellDef="let element">
+            <a [routerLink]="['/editfiradmin', element.id]">
+              <mat-icon color="primary">edit</mat-icon>
+            </a>
+          </td>
+        </ng-container>
+      
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[2, 5, 10, 25, 100]" aria-label="Select page" z->
+    </mat-paginator> 
+</div>
+</div>

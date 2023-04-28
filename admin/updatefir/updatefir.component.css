@@ -1,0 +1,32 @@
+h1{
+    padding-top: 20px;
+}
+#header{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.row{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.container{
+    padding-top: 20px;
+}
+#field{
+    padding-bottom: 10px;
+}
+form{
+    padding-left: 30%;
+    padding-right: 30%;
+}
+button{
+    align-items: center;
+    text-align: center;
+}
+#button{
+    padding-bottom: 20px;
+}
+#button2{
+    padding-bottom: 20px;
+}

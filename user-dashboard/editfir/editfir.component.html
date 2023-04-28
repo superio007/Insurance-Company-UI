@@ -1,0 +1,46 @@
+        <div class="container">
+            <div class="card">
+                <form>
+
+                    
+        <div id="header"> <!--header started-->
+            <h3>Registered FIR's Update and Delete:</h3>
+        </div>   <!--header closed-->
+
+                    <div id="field"> <!--Name field-->
+                        <input class="form-control" [(ngModel)]="firdata.name" name="name"
+                        placeholder="Enter your name">
+                       </div>
+            
+                      <div id="field"> <!--Email field-->
+                        <input class="form-control" [(ngModel)]="firdata.email" name="email"
+                      placeholder="Enter your email">
+                      </div>
+            
+                      <div id="field">  <!--Phone number field-->
+                       <input class="form-control" [(ngModel)]="firdata.phone" name="phone"
+                     placeholder="Enter your phone number" minlength="10" maxlength="10">
+                     </div>
+           
+                     <div id="field">  <!--Address field-->
+                       <input class="form-control" [(ngModel)]="firdata.address" name="address"
+                     placeholder="Enter your address">
+                     </div>
+           
+                     <div id="field"> <!--Complaint field-->
+                       <input class="form-control" [(ngModel)]="firdata.complaint" name="complaint"
+                     placeholder="Enter your complaint">
+                     </div> 
+    
+                     <div id="button">
+                        <button class="btn btn-outline-dark" (click)="onUpdate()">Update the form</button>
+                     </div>
+                     
+                     <div id="button2">
+                        <button class="btn btn-outline-dark" (click)="onDelete()">Delete the form</button>
+                     </div>
+    
+    
+                </form>
+            </div>
+        </div>

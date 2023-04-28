@@ -1,0 +1,55 @@
+<div class="container"> <!--Sign up -->
+    <div class="card">
+   
+    <div id="name"> <!-- header-->
+        <h1><b><u>User Sign Up:</u></b></h1>
+      </div>
+
+        <form [formGroup]="signupform" (ngSubmit)="signup()">
+
+           <div id="field"> <!--Name field-->
+            <input class="form-control" [(ngModel)]="Signup.username" name="name" formControlName="name"
+            placeholder="Enter your name">
+            
+            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+              <div *ngIf="f['name'].errors && f['name'].errors['required']">Your Name is required.</div>
+              <div *ngIf="f['name'].errors && f['name'].errors['pattern']">Only alphabets are allowed.</div>
+          </div>
+           </div>
+
+          <div id="field"> <!--Email field-->
+            <input class="form-control" [(ngModel)]="Signup.email" name="email" formControlName="email"
+          placeholder="Enter your email">
+          
+          <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">Your email is required.</div>
+            <div *ngIf="f['email'].errors && f['email'].errors['email']">Only valid email is required.</div>
+        </div>
+          </div>
+
+        <div id="field"> <!--username field-->
+            <input class="form-control" [(ngModel)]="Signup.username" name="username" formControlName="username"
+        placeholder="Enter your username">
+        
+        <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+          <div *ngIf="f['username'].errors && f['username'].errors['required']">Username Name is required.</div>
+          <div *ngIf="f['username'].errors && f['username'].errors['pattern']">Only alphabets are allowed.</div>
+      </div>
+        </div>
+
+      <div id="field"> <!--password field-->
+        <input class="form-control" [(ngModel)]="Signup.password" name="password" formControlName="password"
+      placeholder="Enter your password">
+      
+      <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+        <div *ngIf="f['password'].errors && f['password'].errors['required']">password Name is required.</div>
+    </div>
+      </div>
+
+            <button type="submit" [disabled]="signupform.invalid" class="btn btn-outline-dark" (click)="signup()">Sign-up</button>
+
+            <div class="text-center"><p>Registered member?  <a routerLink="/admin-login">Login</a></p></div>
+        </form>
+        
+    </div>
+</div>

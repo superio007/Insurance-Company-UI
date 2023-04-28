@@ -1,0 +1,37 @@
+<div class="container"> <!--Admin started-->
+    <div class="card">
+  
+      <div id="name"> <!-- header-->
+        <h1><b><u>Admin Sign In:</u></b></h1>
+      </div>
+  
+      <form [formGroup]="loginform" (ngSubmit)="login()"> <!--admin login form started-->
+    
+       <div id="field"> <!--Username field-->
+        <input class="form-control" [(ngModel)]="Admin.username" formControlName="username"
+        placeholder="Enter your username">
+        
+        <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+          <div *ngIf="f['username'].errors && f['username'].errors['required']">Username Name is required.</div>
+          <div *ngIf="f['username'].errors && f['username'].errors['pattern']">Only alphabets are allowed.</div>
+      </div>
+       </div>
+    
+        <div id="field"> <!--Password field-->
+          <input class="form-control" [(ngModel)]="Admin.password" formControlName="password"
+        placeholder="Enter your password" type="password">
+        
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+          <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+      </div>
+        </div>
+    
+  
+        <button type="submit" [disabled]="loginform.invalid" class="btn btn-outline-dark" (click)="login()">Log In</button>
+  
+        <div class="text-center"><p>Not a member?  <a routerLink="/sign-up">Register</a></p></div>
+    
+    </form> <!--admin login form ended-->
+    </div>
+    
+  </div> <!--Admin ended-->

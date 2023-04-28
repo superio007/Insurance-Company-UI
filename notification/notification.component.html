@@ -1,0 +1,64 @@
+<div id="header">
+    <h1>Updates:</h1>
+</div>
+
+
+<div class="container">
+  <div class="mt-1 mat-elevation-z8">
+    <table mat-table matSort [dataSource]="dataSource" class="table">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+     <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+       <!-- Email Column -->
+       <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+       <!-- Phone Number Column -->
+       <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+
+       <!-- Address Column -->
+       <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      </ng-container>
+
+      <!-- Complaint Column -->
+      <ng-container matColumnDef="complaint">
+        <th mat-header-cell *matHeaderCellDef> Complaint </th>
+        <td mat-cell *matCellDef="let element"> {{element.complaint}} </td>
+      </ng-container>
+
+       <!-- Complaint Column -->
+       <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+       <!-- Complaint Column -->
+       <ng-container matColumnDef="remark">
+        <th mat-header-cell *matHeaderCellDef> Remark </th>
+        <td mat-cell *matCellDef="let element"> {{element.remark}} </td>
+      </ng-container>
+
+      
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[2, 5, 10, 25, 100]" aria-label="Select page" z->
+    </mat-paginator> 
+</div>
+</div>

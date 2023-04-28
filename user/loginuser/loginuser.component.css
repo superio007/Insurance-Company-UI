@@ -1,0 +1,14 @@
+#field{
+    padding-bottom: 20px;
+}
+#name{
+    text-align: center;
+}
+.card{
+    padding: 40px 40px 40px 40px;
+}
+.container{
+    padding-top: 70px;
+    padding-left: 20%;
+    padding-right: 20%;
+}

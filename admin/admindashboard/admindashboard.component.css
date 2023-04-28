@@ -1,0 +1,14 @@
+.container{
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+#header{
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.row{
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}

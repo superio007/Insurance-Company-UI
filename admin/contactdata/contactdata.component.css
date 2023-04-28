@@ -1,0 +1,25 @@
+#header{
+    text-align: center;
+    padding-top: 20px;
+}
+.searh-input {
+    outline: none;
+    border: 1px solid #CCC;
+    padding: 8px 10px;
+    border-radius: 3px;
+    float: right;
+}
+  
+.searh-input:active {
+    border: 1px solid #BBB;
+}
+.searh-input:focus {
+    border: 1px solid #AAA;
+}
+.searchbox{
+    padding-bottom: 30px;
+    padding-right: 6%;
+}
+#button-left{
+    padding-left: 6%;
+}
